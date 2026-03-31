@@ -1,0 +1,622 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+		"path": "pages/menu/menu",
+		"style": {
+			"navigationStyle": "custom",
+			"enablePullDownRefresh": false,
+			"navigationBarTitleText": "点餐",
+			"navigationBarTextStyle": "black",
+			"navigationBarBackgroundColor": "#ffffff"
+		}
+	},
+	{
+		"path": "pages/index/newindex",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/history",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},{
+			"path": "pages/index/qualitymerchants",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},{
+			"path": "pages/index/choosecommunity",
+			"style": {
+				"navigationBarTitleText": "选择小区"
+			}
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},{
+			"path": "pages/mine/newmine",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/shopcar/index",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},{
+			"path": "pages/careservices/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},{
+			"path": "pages/careservices/detail",
+			"style": {
+			    "navigationBarTitleText": "服务详情",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "pages/components",
+		"pages": [
+			{
+				"path": "pages/userinformation/index",
+				"style": {
+					"navigationBarTitleText": "",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			},
+			{
+				"path": "pages/webview/index",
+				"style": {
+					"navigationBarTitleText": "",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			},
+			{
+				"path": "pages/mine/service",
+				"style": {
+					"navigationBarTitleText": "我的服务",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/mine/content",
+				"style": {
+					"navigationBarTitleText": "内容",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/pay/pay",
+				"style": {
+					"navigationBarTitleText": "uniDrink",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/remark/remark",
+				"style": {
+					"navigationBarTitleText": "uniDrink",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/packages/index",
+				"style": {
+					"navigationBarTitleText": "可用优惠券",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff",
+					"enablePullDownRefresh": true
+				}
+			}, {
+				"path": "pages/balance/balance",
+				"style": {
+					"navigationBarTitleText": "会员储值",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			},  {
+				"path": "pages/balance/newbalance",
+				"style": {
+					"navigationBarTitleText": "余额充值",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			},{
+				"path": "pages/balance/member",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "会员中心"
+				}
+			}, 
+			{
+				"path": "pages/login/login",
+				"style": {
+					"navigationBarTitleText": "登录",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			},
+			{
+				"path": "pages/login/logout",
+				"style": {
+					"navigationBarTitleText": "退出登录"
+				}
+			},
+			{
+				"path": "pages/address/address",
+				"style": {
+					"navigationBarTitleText": "我的地址",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/address/add",
+				"style": {
+					"navigationBarTitleText": "",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}
+			// , {
+			// 	"path": "pages/integrals/integrals",
+			// 	"style": {
+			// 		"navigationStyle": "custom",
+			// 		"onReachBottomDistance": 50
+			// 	}
+			// }
+			
+			,
+			// {
+			// 	"path": "pages/attendance/attendance",
+			// 	"style": {
+			// 		"navigationStyle": "custom"
+			// 	}
+			// },
+			
+			{
+				"path": "pages/orders/orders",
+				"style": {
+					"navigationBarTitleText": "历史订单",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff",
+					"enablePullDownRefresh": true,
+					"onReachBottomDistance": 50
+				}
+			}, {
+				"path": "pages/orders/detail",
+				"style": {
+					"navigationBarTitleText": "订单详情",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/mine/member-code",
+				"style": {
+					"navigationBarTitleText": "会员码",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/coupons/coupons",
+				"style": {
+					"enablePullDownRefresh": true,
+					"navigationBarTitleText": "我的卡券",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/mine/userinfo",
+				"style": {
+					"navigationBarTitleText": "用户信息",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			},
+			// {
+			// 	"path": "pages/integrals/flow",
+			// 	"style": {
+			// 		"navigationBarTitleText": "积分明细",
+			// 		"navigationBarTextStyle": "black",
+			// 		"navigationBarBackgroundColor": "#ffffff"
+			// 	}
+			// }
+			{
+				"path": "pages/review/review",
+				"style": {
+					"navigationBarTitleText": "uniDrink",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/activities/invite",
+				"style": {
+					"navigationBarTitleText": "uniDrink",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/shop/shop",
+				"style": {
+					"navigationBarTitleText": "店铺",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			}, {
+				"path": "pages/balance/bill",
+				"style": {
+					"navigationBarTitleText": "账单",
+					"navigationBarTextStyle": "black",
+					"navigationBarBackgroundColor": "#ffffff"
+				}
+			},
+			// {
+			// 	"path": "pages/scoreproduct/list",
+			// 	"style": {
+			// 		"navigationBarTitleText": "积分商城",
+			// 		"enablePullDownRefresh": true
+			// 	}
+
+			// }, {
+			// 	"path": "pages/scoreproduct/detail",
+			// 	"style": {
+			// 		"navigationBarTitleText": "产品详情",
+			// 		"enablePullDownRefresh": true
+			// 	}
+
+			// }, {
+			// 	"path": "pages/scoreproduct/order",
+			// 	"style": {
+			// 		"navigationBarTitleText": "订单列表",
+			// 		"enablePullDownRefresh": true
+			// 	}
+			// }, {
+			// 	"path": "pages/scoreproduct/orderDetail",
+			// 	"style": {
+			// 		"navigationBarTitleText": "订单详情",
+			// 		"enablePullDownRefresh": true
+			// 	}
+			// }
+			{
+				"path": "pages/login/newlogin",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": ""
+				}
+			},{
+				"path": "pages/balance/mybalance",
+				"style": {
+					"navigationBarTitleText": "我的余额"
+				}
+			},{
+				"path": "pages/balance/fd",
+				"style": {
+					"navigationBarTitleText": "我的福豆"
+				}
+			},{
+				"path": "pages/balance/coupon",
+				"style": {
+					"navigationBarTitleText": "我的优惠券"
+				}
+			},{
+				"path": "pages/balance/getcoupon",
+				"style": {
+					"navigationBarTitleText": "领取优惠券"
+				}
+			}
+		]
+	},{
+		"root":"pages2",
+		"pages": [
+			{
+				"path": "evaluate/index",
+				"style": {
+					"navigationBarTitleText": "评价"
+				}
+			},{
+				"path": "flashsale/index",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "福利抢购"
+				}
+			},{
+				"path": "shopdetail/index",
+				"style": {
+					"navigationBarTitleText": "商品详情"
+				}
+			},{
+				"path": "orderconfirm/index",
+				"style": {
+					"navigationBarTitleText": "订单确认"
+				}
+			},{
+				"path": "money/pay",
+				"style": {
+					"navigationBarTitleText": "支付"
+				}
+			},{
+				"path": "money/paySuccess",
+				"style": {
+					"navigationBarTitleText": "订单确认"
+				}
+			},{
+				"path": "order/order",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "幸福食堂订单"
+				}
+			},{
+				"path": "order/ylorder",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "养老服务订单"
+				}
+			},
+			{
+				"path": "aftersales/index",
+				"style": {
+					"navigationBarTitleText": "售后"
+				}
+			},{
+				"path": "order/evaluate",
+				"style": {
+					"navigationBarTitleText": "评价"
+				}
+			},{
+				"path": "order/evaluateyl",
+				"style": {
+					"navigationBarTitleText": "评价"
+				}
+			},
+			{
+				"path": "order/orderdetail",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": ""
+				}
+			},
+			{
+				"path": "centeradministrator/index",
+				"style": {
+					"navigationBarTitleText": "中心管理员"
+				}
+			},{
+				"path": "centeradministrator/detail",
+				"style": {
+					"navigationBarTitleText": ""
+				}
+			},
+			{
+				"path": "administratordetails/index",
+				"style": {
+					"navigationBarTitleText": ""
+				}
+			},{
+				"path": "salescustomerservice/index",
+				"style": {
+					"navigationBarTitleText": "销售客服"
+				}
+			},{
+				"path": "orderstatistics/index",
+				"style": {
+					"navigationBarTitleText": "订单统计"
+				}
+			},{
+				"path": "orderstatistics/orderstatisticsdetail",
+				"style": {
+					"navigationBarTitleText": ""
+				}
+			},{
+				"path": "productionpersonnel/index",
+				"style": {
+					"navigationBarTitleText": ""
+				}
+			},{
+				"path": "deliverypersonnel/index",
+				"style": {
+					"navigationBarTitleText": "配送员"
+				}
+			},{
+				"path": "deliverypersonnel/manyorder",
+				"style": {
+					"navigationBarTitleText": "多单送达"
+				}
+			},{
+				"path": "service/index",
+				"style": {
+					"navigationBarTitleText": "服务人员"
+				}
+			},
+			{
+				"path": "service/detail",
+				"style": {
+					"navigationBarTitleText": ""
+				}
+			},
+			{
+				"path": "service/noservice",
+				"style": {
+					"navigationBarTitleText": "服务未进行"
+				}
+			},{
+				"path": "service/introduce",
+				"style": {
+					"navigationBarTitleText": "填写资料"
+				}
+			},{
+				"path": "distributionsupervisor/index",
+				"style": {
+					"navigationBarTitleText": "配送主管"
+				}
+			},{
+				"path": "deliveryorder/index",
+				"style": {
+					"navigationBarTitleText": "配送订单",
+					"navigationStyle": "custom"
+				}
+			},{
+				"path": "deliveryorder/management",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "人员管理"
+				}
+			},{
+				"path": "deliveryorder/detail",
+				"style": {
+					"navigationBarTitleText": ""
+				}
+			},{
+				"path": "orderreview/index",
+				"style": {
+					"navigationBarTitleText": "订单审核"
+				}
+			},{
+				"path": "orderreview/detail",
+				"style": {
+					"navigationBarTitleText": ""
+				}
+			},{
+				"path": "submitSuccess/index",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "提交成功"
+				}
+			},{
+				"path": "order/returndetail",
+				"style": {
+					"navigationStyle": "custom",
+					"navigationBarTitleText": "退款成功"
+				}
+			},{
+				"path": "mycollection/index",
+				"style": {
+					"navigationBarTitleText": "我的收藏"
+				}
+			},{
+				"path": "myevaluate/index",
+				"style": {
+					"navigationBarTitleText": "我的评价"
+				}
+			},{
+				"path": "feedback/index",
+				"style": {
+					"navigationBarTitleText": "意见反馈"
+				}
+			},{
+				"path": "userinfo/index",
+				"style": {
+					"navigationBarTitleText": "个人信息"
+				}
+			}]
+	},{
+		"root": "pages3",
+		"pages": [
+			{
+				"path": "booknow/index",
+			    "style": {
+			    	"navigationBarTitleText": "立即预约"
+			    }
+			},{
+				"path": "communitylife/index",
+			    "style": {
+			    	"navigationBarTitleText": "社区生活",
+					"navigationStyle": "custom"
+			    }
+			},{
+				"path": "communitylife/detail",
+			    "style": {
+			    	"navigationBarTitleText": "活动详情"
+			    }
+			},{
+				"path": "communitylife/success",
+			    "style": {
+			    	"navigationBarTitleText": "报名成功"
+			    }
+			},{
+				"path": "communitylife/mycommunity",
+			    "style": {
+			    	"navigationBarTitleText": "我的报名"
+			    }
+			},{
+				"path": "communitylife/userlist",
+			    "style": {
+			    	"navigationBarTitleText": "活动详情"
+			    }
+			}
+		]
+	}],
+	// "preloadRule": {
+	// 	"pages/example/components": {
+	// 		"network": "all",
+	// 		"packages": ["pages/components"]
+	// 	}
+	// },
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#979797",
+		"selectedColor": "#FACE51",
+		"backgroundColor": "#fff",
+		"borderStyle": "black",
+		"list": [
+			// {
+			// 	"pagePath": "pages/index/newindex",
+			// 	"text": "首页",
+			// 	"iconPath": "static/images/tabBar/index.png",
+			// 	"selectedIconPath": "static/images/tabBar/index_selected.png"
+			// },
+			{
+				"pagePath": "pages/menu/menu",
+				"text": "点餐",
+				"iconPath": "static/images/tabBar/drink1.png",
+				"selectedIconPath": "static/images/tabBar/drink_selected1.png"
+			},
+			// {
+			// 	"pagePath": "pages/careservices/index",
+			// 	"text": "养老服务",
+			// 	"iconPath": "static/images/tabBar/yl.png",
+			// 	"selectedIconPath": "static/images/tabBar/ylsel.png"
+			// },
+			{
+				"pagePath": "pages/shopcar/index",
+				"text": "购物车",
+				"iconPath": "static/images/tabBar/take.png",
+				"selectedIconPath": "static/images/tabBar/take_selected.png"
+			},
+			{
+				"pagePath": "pages/mine/newmine",
+				"text": "我的",
+				"iconPath": "static/images/tabBar/mine.png",
+				"selectedIconPath": "static/images/tabBar/mine_selected.png"
+			}
+		]
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+		}
+	}
+}

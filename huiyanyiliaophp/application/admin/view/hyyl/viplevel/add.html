@@ -1,0 +1,75 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="1"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Shortdesc')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-shortdesc" class="form-control" name="row[shortdesc]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Userank')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-userank" class="form-control " rows="5" name="row[userank]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Desccontent')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-desccontent" class="form-control editor" rows="5" name="row[desccontent]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Mprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-mprice" class="form-control" step="0.01" name="row[mprice]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Qprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-qprice" class="form-control" step="0.01" name="row[qprice]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Hyprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hyprice" class="form-control" step="0.01" name="row[hyprice]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Yprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-yprice" class="form-control" step="0.01" name="row[yprice]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Weigh')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weigh" class="form-control" name="row[weigh]" type="number">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

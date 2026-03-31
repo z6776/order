@@ -1,0 +1,58 @@
+.container{
+	background-color: $pagebg;
+	height: auto;
+	min-height: 100vh;
+	padding-top: 1rpx;
+	padding-bottom: 220rpx;
+	.m-b-24{
+		margin-bottom: 24rpx;
+	}
+	.m-t-24{
+		margin-top: 24rpx;
+	}
+	.item-1{
+		padding: 24rpx 18rpx 24rpx 18rpx;	
+	}
+	.item-2{
+		padding: 26rpx 18rpx 26rpx 18rpx; 
+	}
+	.item-3{
+		padding: 24rpx 46rpx 30rpx 20rpx;
+	}
+	.item-4{
+		padding: 26rpx 18rpx 22rpx 18rpx;
+	}
+	.fixbottom{
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		padding: 32rpx 18rpx 46rpx 18rpx;
+		.paybtn{
+			width: 240rpx;
+			height: 80rpx;
+			background: #FACE51;
+			border-radius: 100rpx 100rpx 100rpx 100rpx;
+			font-weight: 500;
+			font-size: 32rpx;
+			color: #000000;
+			text-align: center;
+			line-height: 80rpx;
+		}
+	}
+	.h130{
+		height: 130rpx;
+		.wh130{
+			width: 130rpx;
+			height: 130rpx;
+		}
+	}
+	.dottag{
+		@include tag;
+		padding: 8rpx 18rpx;
+		background-color: #FFE2BE;
+		font-weight: 500;
+		font-size: 24rpx;
+		color: #494949;
+	}
+}
+

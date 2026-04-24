@@ -26,7 +26,13 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'category_id', title: __('Category_id')},
+                        {field: 'category_id', title: __('Category_id'),formatter: (value,row,index)=>{
+                            console.log(row,"我的当前行");
+                            if(row && row.goods_category){
+                                return row.goods_category.name;
+                            }
+                            return "--";
+                            }},
                         {field: 'name', title: __('Name'), operate: 'LIKE'},
                         {field: 'price', title: __('Price'), operate:'BETWEEN'},
                         {field: 'image', title: __('Image'), operate: false, events: Table.api.events.image, formatter: Table.api.formatter.image},

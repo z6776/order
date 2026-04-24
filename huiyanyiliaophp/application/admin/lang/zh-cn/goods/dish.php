@@ -7,5 +7,6 @@ return [
     'Description' => '简介',
     'Status'      => '上下架',
     'Status 1'    => '上架',
-    'Status 0'    => '下架'
+    'Status 0'    => '下架',
+    "Category_id" => "菜品分类"
 ];

@@ -3,7 +3,7 @@
 namespace app\admin\model\goods;
 
 use think\Model;
-
+use app\admin\model\goods\Category;
 
 class Dish extends Model
 {
@@ -41,6 +41,10 @@ class Dish extends Model
         $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
         $list = $this->getStatusList();
         return isset($list[$value]) ? $list[$value] : '';
+    }
+
+    public function goodsCategory(){
+              return $this->belongsTo(Category::class,'category_id',"id");
     }
 
 

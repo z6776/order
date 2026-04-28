@@ -9,8 +9,11 @@ use app\admin\model\hyyl\Viplevel as ViplevelModel;
 use app\admin\model\hyyl\Viporder as ViporderModel;
 use app\admin\model\User as UserModel;
 use app\admin\model\hyyl\Family as FamilyModel;
+use fast\Random;
+use think\Db;
 use function fast\e;
-
+use app\admin\model\order\Order as OrderNewModel;
+use app\admin\model\goods\Dish as DishModel;
 class OrderService
 {
     /**
@@ -25,6 +28,53 @@ class OrderService
         return (new Order())->save($params);
     }
 
+   // 计算订单金额
+    public function calculateOrderAmount($goodIds)
+    {
+        $order = DishModel::with('items')->find($goodIds);
+        // 1. 计算小计
+        $subtotal = $order->items->sum(function ($item){
+            return $item->price * $item->quantity;
+        });
+        //
+        return $subtotal;
+    }
+
+    /**
+     * 创建订单
+     * @return \app\api\controller\Order
+     */
+    public static function createOrder(array $data){
+        $order = [
+            "order_no"=>Random::alnum(8).time(),
+            "user_id"=>$data["userId"],
+            "dining_type"=>$data["dingType"],
+        ];
+        if($order["dining_type"]==OrderNewModel::DINING_TYPE_TS){
+            $order['table_no'] = $data["table_no"];
+        }
+        if($order["dining_type"]==OrderNewModel::DINING_TYPE_ZQ){
+            $order['takeaway_code'] =  Random::alnum(8).time();
+        }
+        $goods =  json_decode($data["goods"],true);
+        $order["total_amount"] = self::calculateOrderAmount($goods);
+        $order["status"] = OrderNewModel::Tobepaid;
+        $order["remark"] = $data["remark"];
+        $order["created_at"] = time();
+        DB::startTrans();
+        try {
+         $order = OrderNewModel::create($order);
+            DB::commit();
+           return $order;
+        }catch(\Exception $exception){
+            DB::rollback();
+            throw $exception;
+        }
+
+    }
+
+
+
 
     /**
      * 我的订单
@@ -37,15 +87,15 @@ class OrderService
     public static function getorderlist($uid,$status,$pages)
     {
         //获取他们的订单,和本人的订单
-        return OrderModel::with(['family','hospital'])
-            ->where(function ($query) use ($uid,$status){
-                $query->where('user_id',$uid);
-                if(empty($status)){
-                    $query->where('status',$status);
-                }
-            })->order('order.'.$pages[0], $pages[1])//排序
-            ->page($pages[4], $pages[3])
-            ->select();
+//        return OrderModel::with(['family','hospital']
+//            ->where(function ($query) use ($uid,$status){
+//                $query->where('user_id',$uid);
+//                if(empty($status)){
+//                    $query->where('status',$status);
+//                }
+//            })->order('order.'.$pages[0], $pages[1])//排序
+//            ->page($pages[4], $pages[3])
+//            ->select();
     }
 
     /**

@@ -3,8 +3,8 @@
 namespace app\api\controller;
 
 use app\common\controller\Api;
-use app\api\services;
-
+use app\common\service\OrderService;
+use app\admin\model\order\Order as OrderModel;
 /**
  *
  */
@@ -40,16 +40,31 @@ class Order extends Api
      */
     public function createOrder()
     {
-         $orderId = $this->request->post("ids");
-         $dining_type =  $this->request->post("dining_type");
-         if(empty($orderId) || !isset($orderId)){
+        $goodIds = $this->request->post("goodIds"); // 商品ids
+        $dining_type =  $this->request->post("dining_type"); // 就餐类型
+        $table_no = $this->request->post("table_no");
+        $remark = $this->request->post("remark");
+
+        //订单id不能为空
+         if(empty($goodIds)){
             return ["code"=>0,"msg"=>"订单id不能为空","data"=>null];
          }
-        if(empty($dining_type) || !isset($dining_type)){
+         //就餐方式不能为空
+        if(empty($dining_type)){
             return ["code"=>0,"msg"=>"就餐方式不能为空","data"=>null];
         }
-        $orderService = new app\api\services\order\orderService();
-        $result = $orderService->createOrder();
+        // 就餐方式无效
+        if(!in_array($dining_type,[1,2])){
+            return ["code"=>0,"msg"=>"就餐方式无效","data"=>null];
+        }
+        // 堂食没有桌号
+        if(empty($table_no)  && $dining_type==OrderModel::DINING_TYPE_TS){
+            return ["code"=>0,"msg"=>"请填写桌号","data"=>null];
+        }
+        $orderService = new OrderService();
+        $user = $this->auth->getUser();
+        $data = ['goodIds'=>$goodIds,"dingType"=>$dining_type,"user_id"=>$user->id,'table_no'=>$table_no,"remark"=>$remark];
+        $result = $orderService->createOrder($data);
 
     }
 

@@ -234,7 +234,7 @@ return [
         'list_rows' => 15,
     ],
     //验证码配置
-    'captcha'                => [
+    'captcha' => [
         // 验证码字符集合
         'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
         // 验证码字体大小(px)

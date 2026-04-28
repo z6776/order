@@ -34,18 +34,18 @@ class Pay extends Api
             'msg':'返回成功'
        })
      */
-    public function wxpay()
+    public function weChatPay()
     {
 
-        $out_trade_no = $this->request->post('out_trade_no');
-        $order = Viporder::get(['out_trade_no'=>$out_trade_no]);
+        $out_trade_no = $this->request->post('order_no');
+        $order = Viporder::get(['order_no'=>$out_trade_no]);
         if(isset($order) && !empty($order)){
-            $amount = $order->pay_fee;
+            $amount = $order->total_amount;
         }else{
             $this->error("订单不存在");
         }
         $openid = $this->auth->openid;
-        if (!$amount || $amount < 0) {
+        if ($amount <= 0) {
             $this->error("支付金额必须大于0");
         }
         $type = "wechat";
